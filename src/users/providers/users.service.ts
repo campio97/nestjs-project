@@ -27,7 +27,7 @@ export class UsersService {
    * @param id
    * @returns
    */
-  public findById(id: number) {
+  public findById(id: string) {
     return {
       id: id,
       firstName: 'John',
