@@ -23,7 +23,7 @@ export class CreatePostDto {
     example: 'My super cool title',
   })
   @IsString()
-  @MaxLength(100)
+  @MaxLength(512)
   @MinLength(3)
   @IsNotEmpty()
   title: string;
@@ -44,7 +44,7 @@ export class CreatePostDto {
     example: 'my-supercool-slug',
   })
   @IsString()
-  @MaxLength(100)
+  @MaxLength(256)
   @MinLength(3)
   @IsNotEmpty()
   @Matches(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, {
@@ -90,6 +90,7 @@ export class CreatePostDto {
   @IsString()
   @IsUrl()
   @IsOptional()
+  @MaxLength(1024)
   featuredImageUrl?: string;
 
   @ApiProperty({
